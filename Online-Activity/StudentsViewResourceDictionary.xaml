@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Data Template for Student Display -->
+    <DataTemplate x:Key="StudentTemplate">
+        <StackLayout Padding="15" Spacing="0" Margin="0,8">
+            <!-- Border for card effect with dark background -->
+            <Border StrokeThickness="1" 
+                    Stroke="#4A4A4A"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="18"
+                    BackgroundColor="#2C2C2C">
+
+                <Grid RowDefinitions="Auto,Auto" 
+                      ColumnDefinitions="*,Auto"
+                      RowSpacing="8">
+
+                    <!-- Student FirstName (Left) - WHITE TEXT -->
+                    <Label Text="{Binding FirstName, StringFormat='{0}'}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#FFFFFF"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           LineBreakMode="TailTruncation"/>
+
+                    <!-- Program and Contact Number (Right) -->
+                    <StackLayout Grid.Row="0" 
+                                 Grid.Column="1"
+                                 Spacing="4"
+                                 HorizontalOptions="End">
+
+                        <!-- Program Label - LIGHT TEXT -->
+                        <Label Text="{Binding Program}"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="#E8E8E8"
+                               HorizontalTextAlignment="End"/>
+
+                        <!-- Contact Number - LIGHT GRAY TEXT -->
+                        <Label Text="{Binding ContactNumber}"
+                               FontSize="12"
+                               TextColor="#B8B8B8"
+                               HorizontalTextAlignment="End"/>
+                    </StackLayout>
+
+                    <!-- Last Name (Full Width) - WHITE TEXT -->
+                    <Label Text="{Binding LastName}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#FFFFFF"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           LineBreakMode="TailTruncation"/>
+
+                </Grid>
+            </Border>
+        </StackLayout>
+    </DataTemplate>
+
+</ResourceDictionary>

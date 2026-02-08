@@ -4,11 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Online_Activity"
+    xmlns:view="clr-namespace:Online_Activity.View"
     Title="Online_Activity">
 
+    <!-- Load StudentsView from the View namespace -->
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Students"
+        ContentTemplate="{DataTemplate view:StudentsView}"
+        Route="StudentsView" />
 
 </Shell>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Online_Activity.View.StudentsView"
+             Title="Students">
+
+    <ContentPage.Resources>
+        <ResourceDictionary Source="StudentsViewResourceDictionary.xaml" />
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*" Padding="15" BackgroundColor="#1F1F1F">
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0" Spacing="5" Margin="0,0,0,15">
+            <Label Text="Student Information"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#FFFFFF"/>
+            <Label Text="View all registered students"
+                   FontSize="14"
+                   TextColor="#B8B8B8"/>
+        </VerticalStackLayout>
+
+        <!-- Students List -->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Students}"
+                        ItemTemplate="{StaticResource StudentTemplate}"
+                        SelectionMode="Single">
+            <CollectionView.EmptyView>
+                <StackLayout Padding="20" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="📋" FontSize="48" HorizontalOptions="Center"/>
+                    <Label Text="No students found" 
+                           HorizontalOptions="Center"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#E8E8E8"/>
+                    <Label Text="Add students to get started" 
+                           HorizontalOptions="Center"
+                           FontSize="12"
+                           TextColor="#888888"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

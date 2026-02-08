@@ -9,17 +9,18 @@ namespace Online_Activity.Model
 {
     public class Students
     {
+        
+            public int StudentID { get; set; }
 
-        public int studentId { get; set; }  
-        public string FirstName { get; set; }
+            public string? FirstName { get; set; }
 
-        public string LastName { get; set; }
+            public string? LastName { get; set; }
 
-        public int Yearlevel    { get; set; }
+            public int YearLevel { get; set; }
 
-        public string Program { get; set; } 
-        public int ContactNumber { get; set; }  
+            public string? Program { get; set; }
 
-
+            public long ContactNumber { get; set; }
+         
     }
 }
